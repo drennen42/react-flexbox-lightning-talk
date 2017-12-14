@@ -1,0 +1,50 @@
+// Defaults:
+.HotelCards {
+  background-color: #f6f6f6;
+  margin: 2em auto;
+  padding: 12px;
+  max-width: 1024px;
+
+  .HotelCard {
+    margin: 0 1em 4em 1em;
+    border: 1px solid black;
+		box-shadow: -12px 12px 10px 0 rgba(87, 71, 81, 0.2);
+		border-radius: 10px;
+		text-align: center;
+		padding-bottom: 2em;
+    .Hotel-image {
+      max-width: 100%;
+      border-top-right-radius: 10px;
+  		border-top-left-radius: 10px;
+    }
+
+    .Hotel-title {
+      margin: 12px auto;
+      font-weight: bold;
+    }
+  }
+}
+// End Defaults
+
+
+.HotelCards {
+  display: flex;
+  // flex-direction: column;
+
+  // justify-content: space-around;
+  // justify-content: space-between;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  .HotelCard {
+    flex: 0 1 29%;
+    // flex: 1 1 29%;
+    // flex: 0 1 21%;
+    // flex: 1 1 21%;
+
+    // min-width: 260px;
+		// max-width: 500px;
+		// max-width: 25%;
+  }
+}
