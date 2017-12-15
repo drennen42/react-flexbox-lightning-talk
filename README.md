@@ -292,3 +292,77 @@ render() {
 
 - [ ] Add some css to hotelCard.scss
 - [ ] Save the files and checkout your page.
+
+___
+___
+# _Flexbox!_
+___
+
+This may be the ideal situation for Flexbox - a container filled with an unknown number of small components.
+
+Let Flexbox do the calculations for you!  Don't waste time and valuable brain power trying to add `last-of-type`, `first-of-type`, and `:nth-child()` specific css just to get the layout looking how you want, slap some Flex ~Seal~ Box on it!
+
+- Want the cards to have fixed widths through all breakpoints, but as soon as the viewport gets too small to fit multiple in a row you want it to wrap and also center them all? **_NO PROBLEM!_**
+  - The container gets `display: flex;`, `flex-wrap: wrap`, and `justify-content: center;`
+  - The cards get a fixed width (`flex-basis: [px, %, em, vw whatever];` or simply `width: [whatever];`), `flex-grow: 0;`, and `flex-shrink: 0;`
+    - These can all be done in a single line: `flex: 0 0 250px;`; (`flex: [grow, shrink, basis];`)
+- Have an odd # of cards and you want the cards in last row to stretch to fill the space? `flex-grow: 1';`
+- Want the cards to stay the same size, and the extra cards in the last row split the row evenly? `justify-content: space-around;`
+  - Want them to stay as far apart from each other as possible? `justify-content: space-between;`
+
+### Here's a cheat-sheet with maybe a bit more explanation than necessary (tl;dr):
+
+### Container Properties:
+
+- **_justify-content_** aligns children items horizontally. Accepts these values:
+  * flex-start: Items align to the left side of the container.
+  * flex-end: Items align to the right side of the container.
+  * center: Items align at the center of the container.
+  * space-between: Items display with equal spacing between them.
+  * space-around: Items display with equal spacing around them.
+
+
+- **_align-items_** aligns items vertically and accepts these values:
+  * flex-start: Items align to the top of the container.
+  * flex-end: Items align to the bottom of the container.
+  * center: Items align at the vertical center of the container.
+  * baseline: Items display at the baseline of the container.
+  * stretch: Items are stretched to fit the container.
+
+- **_flex-direction_** defines the direction the items are places in the container and accepts these values:
+  * row: Items are placed the same as the text direction.
+  * row-reverse: Items are placed opposite to the text direction.
+  * column: Items are placed top to bottom.
+  * column-reverse: Items are placed bottom to top.
+  * Notice that when you set the direction to a reversed row or column, start and end are also reversed.
+  * Notice that when the flex direction is a column, justify-content changes to the vertical and align-items to the horizontal.
+
+- **_flex-wrap_** accepts these values:
+  * nowrap: Every item is fit to a single line.
+  * wrap: Items wrap around to additional lines.
+  * wrap-reverse: Items wrap around to additional lines in reverse.
+
+- **_flex-flow_** used as a shorthand for the combination of flex-direction and flex-wrap.  It accepts the value of one of the two properties separated by a space. I.e.: 'flex-flow: row wrap’ to set rows and wrap them.
+
+### Item Properties:
+
+- **_order_** - by default, items have a value of 0, use order to set it to a positive or negative integer value.
+
+- **_align-self_** - applied to individual items and accepts the same values as align-items and it’s value for the specific item.
+
+
+- **_align-content_** - used to set how multiple lines are spaces apart from each other.  Accepts these values:
+  * flex-start: Lines are packed at the top of the container.
+  * flex-end: Lines are packed at the bottom of the container.
+  * center: Lines are packed at the vertical center of the container.
+  * space-between: Lines display with equal spacing between them.
+  * space-around: Lines display with equal spacing around them.
+  * stretch: Lines are stretched to fit the container.
+    * This can be confusing, but align-content determines the spacing between lines, while align-items determines how the items as a whole are aligned within the container. When there is only one line, align-content has no effect.
+
+- **_flex-basis_** - This defines the default size of an element before the remaining space is distributed. It can be a length (e.g. 20%, 5rem, etc.) or a keyword. The auto keyword means "look at my width or height property" (which was temporarily done by the main-sizekeyword until deprecated). The content keyword means "size it based on the item's content" - this keyword isn't well supported yet, so it's hard to test and harder to know what its brethren max-content, min-content, and fit-content do.
+
+- **_flex-grow_** - This defines the ability for a flex item to grow if necessary. It accepts a unitless value that serves as a proportion. It dictates what amount of the available space inside the flex container the item should take up.
+If all items have flex-grow set to 1, the remaining space in the container will be distributed equally to all children. If one of the children has a value of 2, the remaining space would take up twice as much space as the others (or it will try to, at least).
+
+- **_flex-shrink_** This defines the ability for a flex item to shrink if necessary.
