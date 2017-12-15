@@ -99,7 +99,7 @@ module.exports = {
   'hyatt1': {
     address: "151 N Riverside Plaza",
     city: "Chicago",
-    image: "http://150northriverside.com/wp-content/uploads/slide-home-2-2.jpg",
+    image: "https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2014/09/21/1640/LISLE-P063-Exterior.jpg/LISLE-P063-Exterior.4x3.jpg",
     name: "Alex's 1st Hotel",
     spiritCode: "adren",
     state: "Illinois",
@@ -116,7 +116,7 @@ module.exports = {
 _Back inside HotelCards.jsx render() function:_
 - [ ] Save all props in a `const` and do any existence checks.
   - For this example we will use `const details = {...this.props},`
-  - And we want to check to ensure the image url exists, if it doesn't, use a default image: `image = (!!details.image) ? details.image : "default-img.jpg";`
+  - And we want to check to ensure the image url exists, if it doesn't, use a default image: `image = (!!details.image) ? details.image : "[path-to-a-default-img.jpg]";`
 
 It's standard to give the JSX element the same className as the name of the component.
 This helps to keep stylesheets clean and very easy to read.
@@ -139,7 +139,7 @@ That's all there is to it!  Your whole `HotelCard.jsx` file should look like thi
 
 ``` javascript
 import React, { Component } from 'react';
-import './hotelCard.css';
+import './HotelCard.css';
 
 class HotelCard extends Component {
 
@@ -174,7 +174,7 @@ Now we need to build those functions to render the cards
 - [ ] Open `App.js` - You'll notice how assets, components, libraries, and stylesheets are imported in the auto-generated example as well as the `render()` function down there at the bottom
 - import our new HotelCard component and the sampleHotels data:
 ``` javascript
-import HotelCard from './components/hotelCard/hotelCard';
+import HotelCard from './components/HotelCard/HotelCard';
 import sampleHotels from './sampleHotels.js';
 ```
 - [ ] In the render function, remove everything except for:
