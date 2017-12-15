@@ -116,7 +116,7 @@ module.exports = {
 _Back inside HotelCards.jsx render() function:_
 - [ ] Save all props in a `const` and do any existence checks.
   - For this example we will use `const details = {...this.props},`
-  - And we want to check to ensure the image url exists, if it doesn't, use a default image: `image = (!!details.image) ? details.image : "[path-to-a-default-img.jpg]";`
+  - And we want to check to ensure the image url exists, if it doesn't, use a default image: `image = (details.image) ? details.image : "[path-to-a-default-img.jpg]";`
 
 It's standard to give the JSX element the same className as the name of the component.
 This helps to keep stylesheets clean and very easy to read.
@@ -145,7 +145,7 @@ class HotelCard extends Component {
 
   render() {
     const details = {...this.props},
-      image = (!!details.image) ? details.image : "https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2017/02/13/1236/Hyatt-Regency-Green-Bay-P046-Standard-Two-Queens-Bedroom.jpg/Hyatt-Regency-Green-Bay-P046-Standard-Two-Queens-Bedroom.4x3.jpg";
+      image = (details.image) ? details.image : "https://assets.hyatt.com/content/dam/hyatt/hyattdam/images/2017/02/13/1236/Hyatt-Regency-Green-Bay-P046-Standard-Two-Queens-Bedroom.jpg/Hyatt-Regency-Green-Bay-P046-Standard-Two-Queens-Bedroom.4x3.jpg";
 
     return (
       <div className="HotelCard">
