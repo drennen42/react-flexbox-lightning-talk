@@ -52,7 +52,7 @@ ___
 - [ ] Import React and React Component with `import React, { Component } from react;`
 - [ ] While we're there, also import our stylesheet with `import './HotelCard.css';`
   _Yes, I realize that it doesn't exist yet! Patience!_
-- [ ]Every react component needs to extend from react's Component like:
+- [ ] Every react component needs to extend from react's Component like:
 
 ``` javascript
 class HotelCard extends Component {
