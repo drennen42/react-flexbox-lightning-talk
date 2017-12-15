@@ -6,7 +6,7 @@ import sampleHotels from './sampleHotels.js';
 class App extends Component {
   constructor() {
     super();
-    this.renderHotels = this.renderHotels.bind(this);
+    this.renderHotel = this.renderHotel.bind(this);
     this.state = {
 			hotels: {}
 		}
@@ -15,41 +15,31 @@ class App extends Component {
   componentWillMount() {
     this.setState({
 			hotels: sampleHotels
-		})
+		});
   }
 
-  renderHotels(key) {
+  renderHotel(key) {
 		const hotel = this.state.hotels[key];
 		return (
 			<HotelCard
-				key={key}
-				id={key}
-				image={hotel.image}
 				address={hotel.address}
 				city={hotel.city}
-				state={hotel.state}
-				zip={hotel.zip}
-				name={hotel.name}
+        image={hotel.image}
+        name={hotel.name}
         order={hotel.order}
+        spiritCode={hotel.spiritCode}
+				state={hotel.state}
+        zip={hotel.zip}
 			/>
     )
   }
-
-  loadSampleHomes() {
-		this.setState({
-			hotels: sampleHotels
-		})
-	}
-
 
   render() {
     return (
       <div className="App">
         <h1>Alex's Hotels</h1>
         <div className="HotelCards">
-          <div className="HotelCards">
-    			     {Object.keys(this.state.hotels).map(this.renderHotels)}
-    			</div>
+  			    {Object.keys(this.state.hotels).map(this.renderHotel)}
         </div>
       </div>
     );
