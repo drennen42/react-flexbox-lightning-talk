@@ -48,9 +48,9 @@ _This will open your default browser and go to localhost:3000. You will see the 
 ___
 #### Make a HotelCard component:
 
-- [ ]Open `src/HotelCard/HotelCard.jsx`
-- [ ]Import React and React Component with `import React, { Component } from react;`
-- [ ]While we're there, also import our stylesheet with `import './HotelCard.css';`
+- [ ] Open `src/HotelCard/HotelCard.jsx`
+- [ ] Import React and React Component with `import React, { Component } from react;`
+- [ ] While we're there, also import our stylesheet with `import './HotelCard.css';`
   _Yes, I realize that it doesn't exist yet! Patience!_
 - [ ]Every react component needs to extend from react's Component like:
 
@@ -91,8 +91,8 @@ Our Hotels are going to have:
 
 #### Make a sample Hotel data file:
 A sample data file is simply a javascript object that gets exported.
-- [ ]Open `src/sampleHotels.js`
-- [ ]Add a made-up hotel and export it:
+- [ ] Open `src/sampleHotels.js`
+- [ ] Add a made-up hotel and export it:
 
 ``` javascript
 module.exports = {
@@ -114,13 +114,13 @@ module.exports = {
 #### Building the JSX of the HotelCard:
 
 _Back inside HotelCards.jsx render() function:_
-- [ ]Save all props in a `const` and do any existence checks.
+- [ ] Save all props in a `const` and do any existence checks.
   - For this example we will use `const details = {...this.props},`
   - And we want to check to ensure the image url exists, if it doesn't, use a default image: `image = (!!details.image) ? details.image : "default-img.jpg";`
 
 It's standard to give the JSX element the same className as the name of the component.
 This helps to keep stylesheets clean and very easy to read.
-- [ ]Finally build the JSX inside the `return()` function:
+- [ ] Finally build the JSX inside the `return()` function:
 
 ``` javascript
   return (
@@ -171,13 +171,13 @@ Now we need to build those functions to render the cards
 
 #### Render My Component!:
 
-- [ ]Open `App.js` - You'll notice how assets, components, libraries, and stylesheets are imported in the auto-generated example as well as the `render()` function down there at the bottom
+- [ ] Open `App.js` - You'll notice how assets, components, libraries, and stylesheets are imported in the auto-generated example as well as the `render()` function down there at the bottom
 - import our new HotelCard component and the sampleHotels data:
 ``` javascript
 import HotelCard from './components/hotelCard/hotelCard';
 import sampleHotels from './sampleHotels.js';
 ```
-- [ ]In the render function, remove everything except for:
+- [ ] In the render function, remove everything except for:
 
 ``` javascript
 render() {
@@ -189,9 +189,9 @@ render() {
 ```
 
 This is going to be our _(I'm making bunny ears with 2 fingers)_ "page".
-- [ ]Add a simple h1 tag for a title - `<h1>Sweet Hotels</h1>`
-- [ ]We still need a container for the HotelCards - `<div className="HotelCards"></div>`
-- [ ]Now we need to get the data from the sampleHotels file into the _state_ with a function called `componentWillMount()`.
+- [ ] Add a simple h1 tag for a title - `<h1>Sweet Hotels</h1>`
+- [ ] We still need a container for the HotelCards - `<div className="HotelCards"></div>`
+- [ ] Now we need to get the data from the sampleHotels file into the _state_ with a function called `componentWillMount()`.
   - The `componentWillMount()` function relates to the react component lifecycle and executes before the component is rendered (before the render function)
   - In the `componentWillMount()` function we'll just be setting the _state_ to the sample data using React's `setState()`:
 
@@ -238,7 +238,7 @@ constructor() {
 }
 ```
 
-- [ ]Lets write that `renderHotel()` function now.
+- [ ] Lets write that `renderHotel()` function now.
   - This function will take an argument, _key_, that we can use to find a specific key/value pair in the state (_remember that once the component is mounted, our state will hold the sampleHotel object_).
   - Each time this function is executed we want it to create a new `HotelCard` component and return it's JSX/HTML value. We do that like this:
 
@@ -253,7 +253,7 @@ renderHotel(key) {
 }
 ```
 
-- [ ]Now we just pass the props like html attributes and so they can be used in the HotelCard render function:
+- [ ] Now we just pass the props like html attributes and so they can be used in the HotelCard render function:
 
 ``` javascript
 renderHotel(key) {
@@ -272,7 +272,7 @@ renderHotel(key) {
 }
 ```
 
-- [ ]Last piece of the puzzle is to call the renderHotel function.
+- [ ] Last piece of the puzzle is to call the renderHotel function.
   - Since this has to be done after `componentWillMount()` is executed so the state is populated, this should happen inside the App's render function.
   - We'll use javascript's `Object.keys()`, the Object is _state_, and map the keys to `renderHotel`.
   - The final render function will look like this:
@@ -290,5 +290,5 @@ render() {
 }
 ```
 
-- [ ]Add some css to hotelCard.scss
-- [ ]Save the files and checkout your page.
+- [ ] Add some css to hotelCard.scss
+- [ ] Save the files and checkout your page.
